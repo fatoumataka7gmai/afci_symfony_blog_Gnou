@@ -23,16 +23,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[Assert\NotBlank(message: "Le prénom est obligatoire.")]
-    #[Assert\Length(
-        max: 255,
-        maxMessage: "Le prénom ne doit pas dépasser {{limit}} caractères.",
-    )]
-    #[Assert\Regex(
-        Pattern: 
-        match: true,
-        message: "Le prénom doit contenir uniquement des lettres  des chiffres et le tiret du milieu de l'\undescore "
-    )]
+    
     #[ORM\Column(length: 255)]
     private ?string $firstName = null;
 
@@ -50,8 +41,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
-
-    
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $createdAt = null;

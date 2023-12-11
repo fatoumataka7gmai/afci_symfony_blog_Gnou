@@ -1,6 +1,7 @@
 <?php
+namespace App\Controller\Visitor\Registration;
 
-namespace App\Controller;
+
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
@@ -26,7 +27,7 @@ class RegistrationController extends AbstractController
         $this->emailVerifier = $emailVerifier;
     }
 
-    #[Route('/register', name: 'visitor.registration.register', methode:['GET','POST'])]
+    #[Route('/register', name: 'visitor.registration.register', methods: ['GET','POST'])]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new User();

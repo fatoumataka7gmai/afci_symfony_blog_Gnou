@@ -57,7 +57,7 @@
                             </div>
                         {% endfor %}
                         
-                        {#<div class="mb-3">
+                        <div class="mb-3">
                             <label for="authentication_form_email">Email</label>
                             <input type="email" value="{{ last_username }}" name="email" id="authentication_form_email" class="form-control" autocomplete="email" required autofocus>
                         </div>
@@ -75,7 +75,7 @@
                             <div class="col-md-6 text-start text-md-end my-1">
                                 <a href="{{path('visitor.authentication.forgot_password_request')}}">Mot de passe oublié ?</a>
                             </div>
-                        </div>#}
+                        </div>
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
                         <div class="mb-3">
                             <input formnovalidate type="submit" class="btn btn-primary w-100 shadow" value="Je me connecte">
